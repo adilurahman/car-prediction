@@ -3,7 +3,15 @@ import numpy as np
 from classifier import load_model
 
 app = Flask(__name__)
-model = load_model()  # loads FIRST
+# Lazy-load the model on first request to avoid heavy imports at module import time.
+_model = None
+
+
+def get_model():
+    global _model
+    if _model is None:
+        _model = load_model()
+    return _model
 
 @app.route("/")
 def home():
@@ -45,6 +53,7 @@ def predict():
     ]
     
     final_features = np.array([features])
+    model = get_model()
     prediction = model.predict(final_features)
     
     return render_template(
