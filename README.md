@@ -11,6 +11,10 @@ This project provides a simple web UI and backend for serving a regression model
 - Train and save a regression model (`train_reg.py`).
 - Serve predictions via a Flask web app (`app.py`, `wsgi.py`).
 - Simple web UI in `templates/index.html` for interactive predictions.
+## Demo Video
+
+https://github.com/user-attachments/assets/8841f5a2-4466-4848-9067-60e461ba6f6b
+
 
 ## Requirements
 
@@ -62,3 +66,6 @@ python app.py
 ## License & Contribution
 
 Feel free to open issues or submit pull requests to improve functionality or documentation.
+
+## Hosted Link
+https://dashboard.render.com/web/srv-d604kj2li9vc73ancgkg
